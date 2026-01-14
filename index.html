@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aiden thinks your domain is way too long</title>
+
+  <!-- Discord / social preview -->
+  <meta property="og:title" content="Aiden has had enough of this domain">
+  <meta property="og:description" content="Your current domain name is objectively too long, Ben. Please go pick something normal. Thank you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aidenthinksyourdomainiswaytoolong.de">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="theme-color" content="#ff00aa">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aiden has had enough">
+  <meta name="twitter:description" content="Your domain is objectively too long. Pick something normal.">
+  
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #ff00aa, #00ffff, #ffff00, #ff00aa);
+      background-size: 400% 400%;
+      animation: rainbow 12s ease infinite;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 4.8rem;
+      margin: 0.1em 0 0.8em;
+      color: #000;
+      -webkit-text-stroke: 3px #ffff00;
+      text-shadow: 
+        0 0 40px #ff00aa,
+        0 0 80px #00ffff,
+        0 0 120px #ffff00;
+      line-height: 1;
+      letter-spacing: -2px;
+      transform: rotate(-2deg);
+    }
+
+    .subtitle {
+      font-size: 1.9rem;
+      max-width: 860px;
+      margin: 0 auto 3rem;          /* ← more space below */
+      color: #000;
+      background: rgba(255,255,0,0.7);
+      padding: 1.5rem 2.2rem;
+      border: 8px double #ff00aa;
+      border-radius: 20px;
+      text-shadow: 3px 3px 0 #00ffff;
+      line-height: 1.5;
+      font-weight: 900;
+    }
+
+    .domain {
+      font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
+      background: #000;
+      color: #ff00ff;
+      padding: 0.4em 0.9em;
+      border: 6px solid #ffff00;
+      border-radius: 16px;
+      font-size: 1.55em;
+      display: inline-block;
+      margin: 1.2em 0;
+      word-break: break-all;
+      box-shadow: 0 0 60px #ff00aa, inset 0 0 30px #00ffff;
+      animation: pulse 1.8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to   { transform: scale(1.08); }
+    }
+
+    .small-print {
+      font-size: 1.3rem;
+      color: #000;
+      background: #00ffff;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin: 3rem auto 5rem;       /* ← generous bottom margin */
+      border: 5px dashed #ff00aa;
+      max-width: 90%;
+    }
+
+    footer {
+      font-size: 1.1rem;
+      color: #ffff00;
+      background: #ff00aa;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      text-shadow: 2px 2px 0 #000;
+      margin-top: auto;             /* ← pushes to bottom naturally */
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      h1          { font-size: 3.6rem; }
+      .subtitle   { font-size: 1.5rem; padding: 1.2rem 1.6rem; }
+      .domain     { font-size: 1.3em; }
+      .small-print{ font-size: 1.1rem; padding: 0.9rem 1.4rem; }
+      footer      { font-size: 1rem; padding: 0.6rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aiden has had enough</h1>
+  
+  <div class="subtitle">
+    Your current domain name<br>
+    <strong class="domain" id="current-domain">loading…</strong><br><br>
+    is objectively too long.<br>
+    Please go pick something normal.<br>
+    Thank you.
+  </div>
+
+  <div class="small-print">
+    This passive-aggressive page will disappear the moment you move to a shorter domain.
+  </div>
+
+  <footer>
+    Served with quiet disappointment • January 2026
+  </footer>
+
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    const customDomain = getQueryParam('domain') || getQueryParam('d');
+    const displayDomain = customDomain || window.location.hostname;
+
+    document.getElementById('current-domain').textContent = displayDomain;
+  </script>
+
+</body>
+</html>
